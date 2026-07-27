@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar/Navbar';
+import Footer from './components/layout/Footer/Footer';
 import Duck from './components/ui/Duck/Duck';
 import styles from './App.module.css';
 
@@ -50,6 +51,7 @@ export default function App() {
           </Routes>
         </Suspense>
       </main>
+      <Footer />
       <Duck />
     </div>
   );
