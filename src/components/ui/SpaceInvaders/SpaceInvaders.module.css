@@ -1,0 +1,15 @@
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  z-index: 0;
+}
+
+.canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  image-rendering: pixelated;
+}

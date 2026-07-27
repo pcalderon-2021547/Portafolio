@@ -1,0 +1,48 @@
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.socialIcon:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+
+.svg {
+  width: 28px;
+  height: 28px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.instagram:hover { border-color: #E4405F; background: linear-gradient(135deg, rgba(228, 64, 95, 0.15), rgba(255, 221, 0, 0.1)); box-shadow: 0 0 20px rgba(228, 64, 95, 0.3); }
+.instagram:hover .svg { color: #E4405F; }
+
+.whatsapp:hover { border-color: #25D366; background: rgba(37, 211, 102, 0.1); box-shadow: 0 0 20px rgba(37, 211, 102, 0.3); }
+.whatsapp:hover .svg { color: #25D366; }
+
+.linkedin:hover { border-color: #0A66C2; background: rgba(10, 102, 194, 0.1); box-shadow: 0 0 20px rgba(10, 102, 194, 0.3); }
+.linkedin:hover .svg { color: #0A66C2; }
+
+.github:hover { border-color: var(--neon-green); background: var(--neon-green-dim); box-shadow: var(--glow-green-soft); }
+.github:hover .svg { color: var(--neon-green); }
+
+.sizeSmall { width: 48px; height: 48px; }
+.sizeSmall .svg { width: 22px; height: 22px; }
+
+.sizeLarge { width: 80px; height: 80px; }
+.sizeLarge .svg { width: 34px; height: 34px; }
+
+.fallback {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Fira Code', monospace;
+  color: var(--text-secondary);
+}

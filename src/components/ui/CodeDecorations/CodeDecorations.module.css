@@ -1,0 +1,42 @@
+.container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snippet {
+  position: absolute;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.6rem;
+  line-height: 1.6;
+  opacity: 0.25;
+  white-space: pre;
+  text-align: left;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  min-height: 1em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  background: var(--neon-green);
+  margin-left: 2px;
+  animation: blink 0.8s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .snippet { display: none; }
+}

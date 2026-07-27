@@ -1,0 +1,36 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+ul, ol { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+input, textarea { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 2px;
+}

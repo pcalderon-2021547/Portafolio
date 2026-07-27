@@ -1,0 +1,190 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--glow-green-soft), var(--shadow-card);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--neon-green);
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.closeBtn:hover { background: rgba(57, 255, 20, 0.2); }
+
+.imageSection {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  min-height: 300px;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  cursor: zoom-in;
+}
+
+.mainImage.zoomed {
+  cursor: zoom-out;
+  transform: scale(2.5);
+}
+
+.lupaHint {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.thumb {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.thumb:hover { opacity: 0.9; }
+.activeThumb { border-color: var(--neon-green); opacity: 1; }
+
+.infoSection {
+  width: 380px;
+  flex-shrink: 0;
+  padding: 2rem;
+  overflow-y: auto;
+  border-left: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  margin-bottom: 1rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.techs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+.tech {
+  padding: 0.3rem 0.8rem;
+  background: var(--neon-green-dim);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--neon-green);
+  font-family: 'Fira Code', monospace;
+}
+
+.learnings { margin-bottom: 1.5rem; }
+
+.learningsTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.learningItem {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.3rem;
+}
+
+.learningItem::before { content: '▸'; position: absolute; left: 0; color: var(--neon-green); }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 1.5px solid var(--neon-green);
+  border-radius: 8px;
+  color: var(--neon-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.link:hover { background: var(--neon-green); color: #000; box-shadow: var(--glow-green); }
+
+@media (max-width: 768px) {
+  .modal { flex-direction: column; max-height: 95vh; }
+  .infoSection { width: 100%; padding: 1.5rem; border-left: none; border-top: 1px solid var(--border-color); }
+}

@@ -1,0 +1,80 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--neon-green);
+  box-shadow: var(--glow-green-soft), var(--shadow-card);
+  transform: translateY(-5px);
+}
+
+.visible { opacity: 1; transform: translateY(0); }
+
+.content { padding: 1.5rem; }
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  margin-bottom: 0.75rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.techs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+
+.tech {
+  padding: 0.25rem 0.75rem;
+  background: var(--neon-green-dim);
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--neon-green);
+  font-family: 'Fira Code', monospace;
+}
+
+.learnings { margin-bottom: 1.25rem; }
+
+.learningsTitle { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+
+.learningItem {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.learningItem::before { content: '▸'; position: absolute; left: 0; color: var(--neon-green); }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 1.5px solid var(--neon-green);
+  border-radius: 8px;
+  color: var(--neon-green);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.link:hover { background: var(--neon-green); color: #000; box-shadow: var(--glow-green); }
+.linkIcon { font-size: 1.1rem; }
